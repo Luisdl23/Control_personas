@@ -52,9 +52,13 @@ namespace Control_personas
         private void button1_Click(object sender, EventArgs e)
         {
             persona.PrimeraMayuscula();
-            labelnom.Text = persona.Nombre;
-            //persona.normalizarNombre().trim();
+            persona.normalizarNombre();
+            persona.arreglarapellido();
             persona.PrimeraMayuscula();
+
+            labelnom.Text = persona.Nombre;
+            labelnom.Text = persona.Nombre.ToString();
+            labelape.Text = persona.Apellido.ToString();
             labelape.Text = persona.Apellido;
         }
 

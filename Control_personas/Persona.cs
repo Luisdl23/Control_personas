@@ -79,14 +79,40 @@ namespace Control_personas
 
         }
 
+        // Eliminar los simbolos de los nombres
         public void normalizarNombre()
         {
 
-          //  char.IsWhiteSpace
+            for (int i = 0; i < nombre.Length; i++)
+            {
+
+                if (!char.IsLetter(nombre[i]))
+                        {
+                StringBuilder eliminarsimbolos = new StringBuilder(nombre);
+                eliminarsimbolos.Remove(i , 1);
+                nombre = eliminarsimbolos.ToString();
+                        }
+
+            }
 
         }
-            
+        // Eliminar los simbolos del Apellido 
+        public void arreglarapellido()
+        {
 
+            for (int i = 0; i < apellido.Length; i++)
+            {
+
+                if (!char.IsLetter(apellido[i]))
+                {
+                    StringBuilder elimsim = new StringBuilder(apellido);
+                    elimsim.Remove(i, 1);
+                    apellido = elimsim.ToString();
+                }
+
+            }
+
+        }
     }
 
     
